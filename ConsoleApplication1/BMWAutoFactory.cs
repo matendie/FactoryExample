@@ -21,7 +21,7 @@ namespace ConsoleApplication1
             auto = new SunRoofDecorator(auto);
             return auto;
         }
-
+         
         private Type GetAutoTypeToCreate(string carName)
         {
             foreach (var auto in autos)

@@ -32,6 +32,7 @@ namespace ConsoleApplication1
                 {
                     Console.WriteLine("Missing make or model.");
                 }
+
                 Console.WriteLine();
                 Console.WriteLine("Exit ?");
                 if (Console.ReadLine().ToLower() == "y")
