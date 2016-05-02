@@ -17,8 +17,10 @@ namespace ConsoleApplication1
             {
                 return new NullCar(carModel);
             }
-
-            return Activator.CreateInstance(type, CarName) as IAuto;
+            IAuto auto = Activator.CreateInstance(type, CarName) as IAuto;
+            auto = new TurboEngineDecorator(auto);
+            return auto;
+            //return Activator.CreateInstance(type, CarName) as IAuto;
         }
 
         private Type GetAutoTypeToCreate(string carName)

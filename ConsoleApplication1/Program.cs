@@ -14,17 +14,24 @@ namespace ConsoleApplication1
                 Console.WriteLine("Make, Model : ");
                 string[] carMakeModel = Console.ReadLine().Split(',');
 
-                string carMake = carMakeModel[0];
-                string carModel = carMakeModel[1];
+                if (carMakeModel.Length == 2)
+                {
+                    string carMake = carMakeModel[0].Trim();
+                    string carModel = carMakeModel[1].Trim();
 
-                IFactoryLoader factoryLoader = new FactoryLoader();
+                    IFactoryLoader factoryLoader = new FactoryLoader();
 
-                IAutoFactory factory = factoryLoader.LoadFactoryForGivenCarName(carMake, carModel);
+                    IAutoFactory factory = factoryLoader.LoadFactoryForGivenCarName(carMake, carModel);
 
-                IAuto car = factory.CreateAutomobile();
+                    IAuto car = factory.CreateAutomobile();
 
-                car.TurnOn();
-                car.TurnOff();
+                    car.TurnOn();
+                    car.TurnOff();
+                }
+                else
+                {
+                    Console.WriteLine("Missing make or model.");
+                }
                 Console.WriteLine();
                 Console.WriteLine("Exit ?");
                 if (Console.ReadLine().ToLower() == "y")
