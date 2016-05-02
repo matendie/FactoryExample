@@ -42,32 +42,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AudiA4.cs" />
-    <Compile Include="AudiAutoFactory.cs" />
-    <Compile Include="AudiQ7.cs" />
-    <Compile Include="Auto.cs" />
-    <Compile Include="AutoFactory.cs" />
-    <Compile Include="BMW335i.cs" />
-    <Compile Include="BMW620d.cs" />
-    <Compile Include="BMW755i.cs" />
-    <Compile Include="BMWAutoFactory.cs" />
-    <Compile Include="CooperAutoFactory.cs" />
-    <Compile Include="FactoryLoader.cs" />
-    <Compile Include="IAuto.cs" />
-    <Compile Include="IAutoFactory.cs" />
-    <Compile Include="IFactoryLoader.cs" />
-    <Compile Include="MiniCooper.cs" />
-    <Compile Include="NullAutoFactory.cs" />
-    <Compile Include="NullCar.cs" />
+    <Compile Include="Cars\Audi\AudiA4.cs" />
+    <Compile Include="Factories\AudiAutoFactory.cs" />
+    <Compile Include="Cars\Audi\AudiQ7.cs" />
+    <Compile Include="Cars\Auto.cs" />
+    <Compile Include="Factories\AutoFactory.cs" />
+    <Compile Include="Cars\BMW\BMW335i.cs" />
+    <Compile Include="Cars\BMW\BMW620d.cs" />
+    <Compile Include="Cars\BMW\BMW755i.cs" />
+    <Compile Include="Factories\BMWAutoFactory.cs" />
+    <Compile Include="Factories\CooperAutoFactory.cs" />
+    <Compile Include="Factories\FactoryLoader.cs" />
+    <Compile Include="Interfaces\IAuto.cs" />
+    <Compile Include="Interfaces\IAutoFactory.cs" />
+    <Compile Include="Interfaces\IFactoryLoader.cs" />
+    <Compile Include="Cars\Cooper\MiniCooper.cs" />
+    <Compile Include="Factories\NullAutoFactory.cs" />
+    <Compile Include="Cars\NullCar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AccessoryDecorator.cs" />
-    <Compile Include="SunRoofDecorator.cs" />
-    <Compile Include="TurboEngineDecorator.cs" />
+    <Compile Include="Decorators\AccessoryDecorator.cs" />
+    <Compile Include="Decorators\SunRoofDecorator.cs" />
+    <Compile Include="Decorators\TurboEngineDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
