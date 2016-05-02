@@ -2,6 +2,7 @@
 {
     public interface IAutoFactory
     {
+        string CarName { get; set; }
         IAuto CreateAutomobile();
     }
 }

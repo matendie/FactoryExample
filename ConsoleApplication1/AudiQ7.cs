@@ -2,14 +2,15 @@
 
 namespace ConsoleApplication1
 {
-    public class AudiQ7 : IAuto
+    public class AudiQ7 : Auto, IAuto
     {
-        public void TurnOff()
+        public AudiQ7(string carName) : base(carName) { }
+        public override void TurnOff()
         {
             Console.WriteLine("AudiQ7 is off.");
         }
 
-        public void TurnOn()
+        public override void TurnOn()
         {
             Console.WriteLine("AudiQ7 is running.");
         }

@@ -4,8 +4,10 @@ namespace ConsoleApplication1
 {
     public class AudiAutoFactory : AutoFactory, IAutoFactory
     {
+        
         public AudiAutoFactory(string carName): base (carName)
         {
+            this.CarName = carName;
         }
 
         public override IAuto CreateAutomobile()
@@ -16,7 +18,7 @@ namespace ConsoleApplication1
                 return new NullCar(carModel);
             }
 
-            return Activator.CreateInstance(type) as IAuto;
+            return Activator.CreateInstance(type, CarName) as IAuto;
         }
 
         private Type GetAutoTypeToCreate(string carName)

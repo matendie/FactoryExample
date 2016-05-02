@@ -2,14 +2,15 @@
 
 namespace ConsoleApplication1
 {
-    public class MiniCooper : IAuto
+    public class MiniCooper : Auto,  IAuto
     {
-        public void TurnOff()
+        public MiniCooper(string carName) : base(carName) { }
+        public override void TurnOff()
         {
             Console.WriteLine("Mini Cooper is off.");
         }
 
-        public void TurnOn()
+        public override void TurnOn()
         {
             Console.WriteLine("Mini Cooper is running.");
         }

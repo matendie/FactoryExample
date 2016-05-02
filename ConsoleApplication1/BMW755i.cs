@@ -2,14 +2,15 @@
 
 namespace ConsoleApplication1
 {
-    public class BMW755i : IAuto
+    public class BMW755i : Auto, IAuto
     {
-        public void TurnOff()
+        public BMW755i(string carName) : base(carName) { }
+        public override void TurnOff()
         {
             Console.WriteLine("BMW755i is off.");
         }
 
-        public void TurnOn()
+        public override void TurnOn()
         {
             Console.WriteLine("BMW755i is running.");
         }

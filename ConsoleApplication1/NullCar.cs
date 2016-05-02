@@ -2,21 +2,18 @@
 
 namespace ConsoleApplication1
 {
-    public class NullCar : IAuto
+    public class NullCar : Auto, IAuto
     {
-        private string _carName = null;
-        public NullCar(string carName)
+        public NullCar(string carName) : base(carName) { }
+         
+        public override void TurnOff()
         {
-            _carName = carName;
-        }
-        public void TurnOff()
-        {
-            Console.WriteLine("No " + _carName + " car was found.");
+            Console.WriteLine("No " + CarName + " car was found.");
         }
 
-        public void TurnOn()
+        public override void TurnOn()
         {
-            Console.WriteLine("No " + _carName + " car was found.");
+            Console.WriteLine("No " + CarName + " car was found.");
         }
     }
 }

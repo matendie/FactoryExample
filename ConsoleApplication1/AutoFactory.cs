@@ -9,6 +9,8 @@ namespace ConsoleApplication1
         internal Dictionary<string, Type> autos = new Dictionary<string, Type>();
         internal string carModel;
 
+        public string CarName { get; set; }
+
         public AutoFactory(string carModel)
         {
             this.carModel = carModel;
