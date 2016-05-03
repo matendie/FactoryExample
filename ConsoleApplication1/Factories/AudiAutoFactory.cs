@@ -5,9 +5,9 @@ namespace ConsoleApplication1
     public class AudiAutoFactory : AutoFactory, IAutoFactory
     {
         
-        public AudiAutoFactory(string carName): base (carName)
+        public AudiAutoFactory(Make car): base (car)
         {
-            this.CarName = carName;
+            this.CarName = car;
         }
 
         public override IAuto CreateAutomobile()
@@ -18,16 +18,16 @@ namespace ConsoleApplication1
                 return new NullCar(carModel);
             }
             IAuto auto = Activator.CreateInstance(type, CarName) as IAuto;
-            auto = new TurboEngineDecorator(auto);
+            //auto = new TurboEngineDecorator(auto);
             return auto;
             //return Activator.CreateInstance(type, CarName) as IAuto;
         }
 
-        private Type GetAutoTypeToCreate(string carName)
+        private Type GetAutoTypeToCreate(Make car)
         {
             foreach (var auto in autos)
             {
-                if (auto.Key.Contains("audi" + carName.ToLower()))
+                if (auto.Key.Contains("audi" + car.Model.ToLower()))
                 {
                     return autos[auto.Key];
                 }

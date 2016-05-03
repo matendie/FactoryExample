@@ -7,23 +7,23 @@ namespace ConsoleApplication1
     public class FactoryLoader : IFactoryLoader
     {
         private Dictionary<string, Type> factories = new Dictionary<string, Type>();
-        public IAutoFactory LoadFactoryForGivenCarName(string carMake, string carModel)
+        public IAutoFactory LoadFactoryForGivenCarName(Make make)
         {
             LoadFactoryTypesToReturn();
-            Type type = GetFactoryTypeToCreate(carMake);
+            Type type = GetFactoryTypeToCreate(make);
             if (type == null)
             {
-                return new NullAutoFactory(carModel);
+                return new NullAutoFactory(make);
             }
 
-            return Activator.CreateInstance(type, carModel) as IAutoFactory;
+            return Activator.CreateInstance(type, make) as IAutoFactory;
         }
 
-        private Type GetFactoryTypeToCreate(string carMake)
+        private Type GetFactoryTypeToCreate(Make carMake)
         {
             foreach (var auto in factories)
             {
-                if (auto.Key.Contains(carMake.ToLower()))
+                if (auto.Key.Contains(carMake.Name.ToLower()))
                 {
                     return factories[auto.Key];
                 }
@@ -37,7 +37,7 @@ namespace ConsoleApplication1
             Type[] TypesInThisAssembly = Assembly.GetExecutingAssembly().GetTypes();
             foreach (var type in TypesInThisAssembly)
             {
-                if (type.GetInterface(typeof (IAutoFactory).ToString()) != null)
+                if (type.GetInterface(typeof (IAutoFactory).ToString()) != null && !factories.ContainsKey(type.Name.ToLower()))
                 {
                     factories.Add(type.Name.ToLower(), type);
                 }

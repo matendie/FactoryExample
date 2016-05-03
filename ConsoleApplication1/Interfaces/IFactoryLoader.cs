@@ -2,6 +2,6 @@
 {
     public interface IFactoryLoader
     {
-        IAutoFactory LoadFactoryForGivenCarName(string carName,string carModel);
+        IAutoFactory LoadFactoryForGivenCarName(Make make);
     }
 }

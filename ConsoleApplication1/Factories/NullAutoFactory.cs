@@ -2,9 +2,9 @@
 {
     public class NullAutoFactory : AutoFactory, IAutoFactory
     {
-        public NullAutoFactory(string carName) : base(carName)
+        public NullAutoFactory(Make car) : base(car)
         {
-            CarName = carName;
+            CarName = car;
         }
          
         public override IAuto CreateAutomobile()

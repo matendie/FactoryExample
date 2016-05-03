@@ -7,11 +7,11 @@ namespace ConsoleApplication1
     public abstract class AutoFactory : IAutoFactory
     {
         internal Dictionary<string, Type> autos = new Dictionary<string, Type>();
-        internal string carModel;
+        internal Make carModel;
 
-        public string CarName { get; set; }
+        public Make CarName { get; set; }
 
-        public AutoFactory(string carModel)
+        public AutoFactory(Make carModel)
         {
             this.carModel = carModel;
             LoadCarTypesToReturn();
@@ -30,7 +30,7 @@ namespace ConsoleApplication1
             }
         }
 
-        
         public abstract IAuto CreateAutomobile();
+         
     }
 }

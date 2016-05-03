@@ -2,13 +2,13 @@
 {
     public abstract class Auto : IAuto
     {
-        public string CarName
+        public Make CarName
         {
             get;
             set;
         }
 
-        public Auto(string carName)
+        public Auto(Make carName)
         {
             CarName = carName;
         }

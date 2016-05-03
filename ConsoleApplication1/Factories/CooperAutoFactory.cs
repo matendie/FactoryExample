@@ -4,7 +4,7 @@ namespace ConsoleApplication1
 {
     public class CooperAutoFactory : AutoFactory, IAutoFactory
     {
-        public CooperAutoFactory(string carName) : base(carName)
+        public CooperAutoFactory(Make carName) : base(carName)
         {
             CarName = carName;
         }
@@ -19,11 +19,11 @@ namespace ConsoleApplication1
             return Activator.CreateInstance(type, CarName) as IAuto;
         }
 
-        private Type GetAutoTypeToCreate(string carName)
+        private Type GetAutoTypeToCreate(Make carName)
         {
             foreach (var auto in autos)
             {
-                if (auto.Key.Contains(carName.ToLower() + "cooper"))
+                if (auto.Key.Contains(carName.Model.ToLower() + "cooper"))
                 {
                     return autos[auto.Key];
                 }

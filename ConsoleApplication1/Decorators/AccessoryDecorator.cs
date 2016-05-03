@@ -12,7 +12,6 @@ namespace ConsoleApplication1
         public AccessoryDecorator(IAuto auto) : base(auto.CarName)
         {
             this._auto = auto;
-        }
-         
+        }         
     }
 }

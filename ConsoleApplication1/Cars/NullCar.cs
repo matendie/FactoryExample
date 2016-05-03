@@ -4,7 +4,7 @@ namespace ConsoleApplication1
 {
     public class NullCar : Auto, IAuto
     {
-        public NullCar(string carName) : base(carName) { }
+        public NullCar(Make carName) : base(carName) { }
          
         public override void TurnOff()
         {
