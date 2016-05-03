@@ -9,7 +9,7 @@ namespace ConsoleApplication1
         {
             this.CarName = car;
         }
-
+         
         public override IAuto CreateAutomobile()
         {
             Type type = GetAutoTypeToCreate(carModel);
@@ -18,9 +18,8 @@ namespace ConsoleApplication1
                 return new NullCar(carModel);
             }
             IAuto auto = Activator.CreateInstance(type, CarName) as IAuto;
-            //auto = new TurboEngineDecorator(auto);
-            return auto;
-            //return Activator.CreateInstance(type, CarName) as IAuto;
+            auto = AddAccessories(auto);
+            return auto; 
         }
 
         private Type GetAutoTypeToCreate(Make car)
@@ -35,5 +34,7 @@ namespace ConsoleApplication1
 
             return null;
         }
+
+        
     }
 }

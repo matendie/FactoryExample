@@ -8,7 +8,6 @@ namespace ConsoleApplication1
         {
             CarName = carName;
         }
-
         public override IAuto CreateAutomobile()
         {
             Type type = GetAutoTypeToCreate(carModel);
@@ -18,7 +17,7 @@ namespace ConsoleApplication1
             }
 
             IAuto auto = Activator.CreateInstance(type, CarName) as IAuto;
-             
+            auto = AddAccessories(auto);
             return auto;
         }
          

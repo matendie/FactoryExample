@@ -23,10 +23,13 @@ namespace ConsoleApplication1
 
                 IAutoFactory factory = factoryLoader.LoadFactoryForGivenCarName(make);
                 IAuto car = factory.CreateAutomobile();
+
                 car.TurnOn();
                 car.TurnOff();
             }
             // CreateJsonConfigFlat();
+
+            Console.ReadLine();
         }
 
 
