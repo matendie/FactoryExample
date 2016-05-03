@@ -13,7 +13,7 @@ namespace ConsoleApplication1
         public override void TurnOff()
         {
             //Console.WriteLine(CarName.Name + " " + CarName.Model + "{0} {1} {3} is off.");
-            Console.WriteLine(string.Format("{0} {1} {2} is off.", CarName.Name, CarName.Model, string.Join(",", CarName.Accessory)));
+            Console.WriteLine(string.Format("{0} {1} with {2} is off.", CarName.Name, CarName.Model, string.Join(" and ", CarName.Accessory)));
 
         }
 
@@ -21,7 +21,7 @@ namespace ConsoleApplication1
         {
             //Console.WriteLine(CarName + " is off. Turbo Charge Engaged.");
 
-            Console.WriteLine(string.Format("{0} {1} {2} is On.", CarName.Name, CarName.Model, string.Join(",", CarName.Accessory)));
+            Console.WriteLine(string.Format("{0} {1} with {2} is On.", CarName.Name, CarName.Model, string.Join(" and ", CarName.Accessory)));
         }
     }
 }
